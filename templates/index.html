@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LessonFlow — AI-планировщик уроков</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <meta name="description" content="Автоматическое создание планов уроков, карточек и тестов с помощью искусственного интеллекта.">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>LessonFlow — AI-планировщик уроков</h1>
+      <p class="subtitle">Быстрое создание учебных материалов для преподавателей</p>
+    </header>
+
+    <main>
+      <form id="generateForm" class="lesson-form">
+        <fieldset>
+          <legend>Параметры генерации</legend>
+
+          <div class="form-group">
+            <label for="topic">Тема:</label>
+            <input type="text" id="topic" name="topic" required 
+                   placeholder="Например: Введение в пиролиз">
+          </div>
+
+          <div class="form-group">
+            <label for="class">Класс:</label>
+            <input type="number" id="class" name="class" min="1" max="11" 
+                   placeholder="Например: 8">
+          </div>
+
+          <div class="form-group">
+            <label for="goal">Цель урока:</label>
+            <input type="text" id="goal" name="goal" 
+                   placeholder="Например: Понять, как работает цикл while">
+          </div>
+
+          <div class="form-group">
+            <label for="level">Уровень сложности:</label>
+            <select id="level" name="level">
+              <option value="basic">Базовый</option>
+              <option value="medium" selected>Средний</option>
+              <option value="advanced">Продвинутый</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn-primary">
+          <span class="icon">✨</span> Сгенерировать материалы
+        </button>
+      </form>
+    
+      <section id="result" class="result-container" aria-live="polite" aria-label="Результаты генерации урока"></section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 LessonFlow</p>
+    </footer>
+
+  </div>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
